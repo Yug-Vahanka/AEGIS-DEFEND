@@ -4,20 +4,15 @@
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/AI-THREAT%20DETECTION-00f5ff?style=for-the-badge&logo=openai&logoColor=white"/>
-<img src="https://img.shields.io/badge/SECURITY-CYBER%20DEFENSE-ff003c?style=for-the-badge&logo=hackaday&logoColor=white"/>
-<img src="https://img.shields.io/badge/STATUS-ONLINE-00ff88?style=for-the-badge"/>
-
-<br><br>
-
-<img src="https://img.shields.io/github/license/Yug-Vahanka/AEGIS-DEFEND?style=flat-square"/>
-<img src="https://img.shields.io/github/stars/Yug-Vahanka/AEGIS-DEFEND?style=flat-square"/>
-<img src="https://img.shields.io/github/forks/Yug-Vahanka/AEGIS-DEFEND?style=flat-square"/>
-<img src="https://img.shields.io/github/issues/Yug-Vahanka/AEGIS-DEFEND?style=flat-square"/>
-<img width="1911" height="529" alt="Screenshot 2026-05-28 145717" src="https://github.com/user-attachments/assets/64adb1dd-bc29-4978-b65a-ea83ecd6895a" />
-
-<img width="1919" height="88" alt="Screenshot 2026-05-28 145231" src="https://github.com/user-attachments/assets/005c56b4-c7c0-4de1-a92f-28b2174f4d0e" />
-<img width="1919" height="87" alt="Screenshot 2026-05-28 145246" src="https://github.com/user-attachments/assets/7799624c-3e74-474e-ae36-7829527efc0c" />
+<img width="1886" height="849" alt="Screenshot 2026-05-28 145142" src="https://github.com/user-attachments/assets/902cc6d5-b651-4848-ad01-e5cb97a0f63a" />
+<img width="1908" height="545" alt="Screenshot 2026-05-28 145159" src="https://github.com/user-attachments/assets/26dc22c8-9094-4cab-98c3-c86eee520079" />
+<img width="1913" height="848" alt="Screenshot 2026-05-28 145329" src="https://github.com/user-attachments/assets/b443a6ae-fcd1-4adc-b66f-4dee63b913bd" />
+<img width="1898" height="861" alt="Screenshot 2026-05-28 145652" src="https://github.com/user-attachments/assets/9c965c8b-e2f2-46e0-a64d-85c08e673ed7" />
+<img width="1895" height="498" alt="Screenshot 2026-05-28 145406" src="https://github.com/user-attachments/assets/27c88d2e-04bb-421f-9391-d13a77df12f8" />
+<img width="1911" height="529" alt="Screenshot 2026-05-28 145717" src="https://github.com/user-attachments/assets/2899aeb9-317f-49d7-ba2c-09e8a2e9e300" />
+<img width="1907" height="850" alt="Screenshot 2026-05-28 145609" src="https://github.com/user-attachments/assets/a861ecdf-5d8b-4372-8939-2d73def90396" />
+<img width="1919" height="88" alt="Screenshot 2026-05-28 145231" src="https://github.com/user-attachments/assets/bf316607-ba09-466b-8ea8-a091cbbaa194" />
+<img width="1919" height="87" alt="Screenshot 2026-05-28 145246" src="https://github.com/user-attachments/assets/0abbdedd-d0a8-4c3c-9686-556dfcdc60a6" />
 
 
 <br><br>
