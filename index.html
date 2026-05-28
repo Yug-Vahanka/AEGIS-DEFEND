@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEGIS DEFEND — AI Social Engineering Defense</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
+<!-- Background canvases -->
+<canvas id="grid-canvas"></canvas>
+<canvas id="hex-canvas"></canvas>
+
+<!-- Alert flash -->
+<div id="alertFlash"></div>
+
+<div id="app">
+
+  <!-- Header -->
+  <header>
+    <div class="logo-wrap">
+      <div class="logo-hex">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="24,2 44,13 44,35 24,46 4,35 4,13" stroke="#00c8ff" stroke-width="1.5" fill="rgba(0,200,255,0.05)"/>
+          <polygon points="24,8 38,16 38,32 24,40 10,32 10,16" stroke="#00c8ff" stroke-width="0.5" fill="none" opacity="0.4"/>
+          <text x="24" y="28" text-anchor="middle" font-family="Orbitron" font-size="10" fill="#00eeff" font-weight="700">AI</text>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <h1>AEGIS DEFEND</h1>
+        <p>AI Social Engineering Defense System v2.0</p>
+      </div>
+    </div>
+    <div class="header-status">
+      <div class="status-pill">
+        <div class="status-dot"></div>
+        SYSTEM ONLINE
+      </div>
+      <div class="threat-counter" id="headerThreatCount">0 THREATS DETECTED</div>
+    </div>
+  </header>
+
+  <!-- Stats -->
+  <div class="stat-bar">
+    <div class="stat-card">
+      <div class="icon">🔍</div>
+      <div class="num num-cyan" id="stat-scanned">0</div>
+      <div class="lbl">Messages Scanned</div>
+    </div>
+    <div class="stat-card">
+      <div class="icon">⚠️</div>
+      <div class="num num-red" id="stat-threats">0</div>
+      <div class="lbl">Threats Blocked</div>
+    </div>
+    <div class="stat-card">
+      <div class="icon">🛡️</div>
+      <div class="num num-green" id="stat-safe">0</div>
+      <div class="lbl">Clean Messages</div>
+    </div>
+    <div class="stat-card">
+      <div class="icon">🧠</div>
+      <div class="num num-yellow" id="stat-acc">98.4%</div>
+      <div class="lbl">Model Accuracy</div>
+    </div>
+  </div>
+
+  <!-- Main Grid -->
+  <div class="main-grid">
+
+    <!-- Left: Input Panel -->
+    <div class="panel">
+      <div id="scanOverlay">
+        <div class="scan-ring"></div>
+        <div class="scan-text">ANALYZING THREAT VECTORS</div>
+        <div class="scan-steps">
+          <div class="scan-step" id="step1">► TOKENIZING MESSAGE</div>
+          <div class="scan-step" id="step2">► NAIVE BAYES CLASSIFICATION</div>
+          <div class="scan-step" id="step3">► RANDOM FOREST ENSEMBLE</div>
+          <div class="scan-step" id="step4">► EXTRACTING THREAT INDICATORS</div>
+          <div class="scan-step" id="step5">► LOGGING TO DATABASE</div>
+        </div>
+      </div>
+
+      <div class="panel-title">Input Analysis Terminal</div>
+
+      <div style="margin-bottom:12px">
+        <span class="input-label">Message Type</span>
+        <div class="type-tabs">
+          <button class="tab-btn active" onclick="setType(this,'email')">📧 Email</button>
+          <button class="tab-btn" onclick="setType(this,'sms')">📱 SMS</button>
+          <button class="tab-btn" onclick="setType(this,'social')">💬 Social</button>
+          <button class="tab-btn" onclick="setType(this,'chat')">🔗 Chat</button>
+        </div>
+      </div>
+
+      <span class="input-label">Paste Suspicious Message</span>
+      <textarea id="msgInput" placeholder="Paste email, SMS, or social message here for AI threat analysis..."></textarea>
+      <div id="charCount">0 chars</div>
+
+      <button id="scanBtn" onclick="runScan()">⬡ INITIATE THREAT SCAN</button>
+
+      <div class="samples-wrap">
+        <div class="samples-label">Quick Load Samples</div>
+        <div class="sample-btns">
+          <button class="sample-btn danger" onclick="loadSample('phish')">⚠ Phishing</button>
+          <button class="sample-btn danger" onclick="loadSample('spam')">⚠ SMS Spam</button>
+          <button class="sample-btn danger" onclick="loadSample('social')">⚠ Social Eng</button>
+          <button class="sample-btn danger" onclick="loadSample('vishing')">⚠ Vishing</button>
+          <button class="sample-btn safe" onclick="loadSample('legit1')">✓ Legit Email</button>
+          <button class="sample-btn safe" onclick="loadSample('legit2')">✓ Legit SMS</button>
+        </div>
+      </div>
+
+      <div class="tech-stack">
+        <div class="tech-pill">MongoDB</div>
+        <div class="tech-pill">Node.js</div>
+        <div class="tech-pill">Random Forest</div>
+        <div class="tech-pill">Naive Bayes</div>
+        <div class="tech-pill">TF-IDF</div>
+        <div class="tech-pill">NLP Pipeline</div>
+      </div>
+    </div>
+
+    <!-- Right: Results Panel -->
+    <div class="panel">
+      <div class="panel-title">Classification Results</div>
+      <div id="resultPanel">
+        <div class="result-idle">
+          <div class="idle-hex">⬡</div>
+          <p>Awaiting Input</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main-grid -->
+
+  <!-- Bottom Grid -->
+  <div class="bottom-grid">
+
+    <!-- Threat Log -->
+    <div class="panel">
+      <div class="panel-title">Threat Intelligence Log</div>
+      <div class="log-wrap" id="logWrap">
+        <div style="color:var(--c-muted);font-size:10px;text-align:center;padding:20px;letter-spacing:2px;text-transform:uppercase">
+          No entries — scan a message to begin
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Model Stack -->
+    <div class="panel">
+      <div class="panel-title">AI Model Stack</div>
+      <div class="model-info-list">
+        <div class="model-info-item">
+          <div class="model-info-name">Random Forest</div>
+          <div class="model-info-desc">Ensemble of 20 decision trees. Bootstrap sampling with Gini impurity splitting. TF-IDF feature vectors.</div>
+          <span class="model-info-tag">PRIMARY</span>
+        </div>
+        <div class="model-info-item">
+          <div class="model-info-name">Naive Bayes</div>
+          <div class="model-info-desc">Multinomial NB with Laplace smoothing. Fast probabilistic text classification via word frequency.</div>
+          <span class="model-info-tag">SECONDARY</span>
+        </div>
+        <div class="model-info-item">
+          <div class="model-info-name">Ensemble Voting</div>
+          <div class="model-info-desc">Weighted majority vote between both models. RF weight: 0.65 · NB weight: 0.35.</div>
+          <span class="model-info-tag">FUSION</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /bottom-grid -->
+
+</div><!-- /app -->
+
+<!--
+  Script load order matters — no bundler used:
+  1. app.js   — global state (msgType, stats, threatLog)
+  2. data.js  — FEATURES, TRAINING, SAMPLES constants
+  3. models.js — ML classes + trained nb instance
+  4. ui.js    — rendering, cursor, backgrounds
+  5. scan.js  — scan orchestration (uses everything above)
+-->
+<script src="js/app.js"></script>
+<script src="js/data.js"></script>
+<script src="js/models.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/scan.js"></script>
+
+</body>
+</html>

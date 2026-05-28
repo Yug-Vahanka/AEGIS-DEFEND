@@ -1,0 +1,18 @@
+{
+  "name": "aegis-defend",
+  "version": "1.0.0",
+  "description": "A browser-based threat detection tool that classifies messages (email, SMS, social, chat) using an ensemble of **Random Forest** and **Naive Bayes** ML models — all running client-side with no external API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongodb": "^7.2.0"
+  }
+}
