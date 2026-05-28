@@ -14,6 +14,11 @@
 <img src="https://img.shields.io/github/stars/Yug-Vahanka/AEGIS-DEFEND?style=flat-square"/>
 <img src="https://img.shields.io/github/forks/Yug-Vahanka/AEGIS-DEFEND?style=flat-square"/>
 <img src="https://img.shields.io/github/issues/Yug-Vahanka/AEGIS-DEFEND?style=flat-square"/>
+<img width="1911" height="529" alt="Screenshot 2026-05-28 145717" src="https://github.com/user-attachments/assets/64adb1dd-bc29-4978-b65a-ea83ecd6895a" />
+
+<img width="1919" height="88" alt="Screenshot 2026-05-28 145231" src="https://github.com/user-attachments/assets/005c56b4-c7c0-4de1-a92f-28b2174f4d0e" />
+<img width="1919" height="87" alt="Screenshot 2026-05-28 145246" src="https://github.com/user-attachments/assets/7799624c-3e74-474e-ae36-7829527efc0c" />
+
 
 <br><br>
 
