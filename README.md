@@ -35,26 +35,6 @@ An advanced AI-powered cyber defense platform designed to identify malicious com
 
 ---
 
-# 📸 System Preview
-
-## 🔥 Main Dashboard
-
-<img width="100%" src="https://github.com/user-attachments/assets/d4fca7fc-d2e8-4478-b700-b30c6a5e206a"/>
-
----
-
-## 🧠 AI Threat Classification
-
-<img width="100%" src="https://github.com/user-attachments/assets/bfb5982e-e01a-458a-a4d5-7e11603716c1"/>
-
----
-
-## 📊 Analytics & Threat Monitoring
-
-<img width="100%" src="https://github.com/user-attachments/assets/e7eb2fac-dcfc-4c5a-980a-8152bb63cd59"/>
-
----
-
 # ✨ Core Features
 
 ## 🤖 AI-Powered Detection Engine
